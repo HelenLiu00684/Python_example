@@ -1,0 +1,113 @@
+🧩 1. CPU Information
+psutil Function	Equivalent Bash Command	Description
+psutil.cpu_percent()	
+top or mpstat 1 1	
+Shows overall CPU utilization (average over 1 second).
+
+psutil.cpu_percent(percpu=True)	
+mpstat -P ALL 1 1	
+Displays CPU usage per individual core.
+
+psutil.cpu_count()	
+nproc	
+Returns the number of logical CPUs (includes hyper-threading).
+
+psutil.cpu_count(logical=False)	
+`lscpu	grep 'Core'`
+
+psutil.cpu_freq()	
+`lscpu	grep MHz`
+
+psutil.cpu_times()	
+cat /proc/stat	
+Prints CPU time spent in different modes (user, system, idle, etc.).
+
+
+💾 2. Memory Information
+psutil Function	Equivalent Bash Command	Description
+psutil.virtual_memory()	
+free -h	
+Shows total, used, and available memory, plus usage percentage.
+
+psutil.swap_memory()	
+swapon --show or cat /proc/swaps	
+Displays swap partition usage and configuration.
+
+💽 3. Disk Information
+psutil Function	Equivalent Bash Command	Description
+psutil.disk_partitions()	
+lsblk or df -hT	
+Lists all mounted disk partitions and filesystem types.
+
+psutil.disk_usage('/')	
+df -h /	
+Shows disk space usage for a specific path (e.g., root /).
+
+psutil.disk_io_counters()	
+iostat -dx or cat /proc/diskstats	
+Displays disk I/O statistics (read/write counts and bytes).
+
+🌐 4. Network Information
+psutil Function	Equivalent Bash Command	Description
+psutil.net_io_counters()	
+cat /proc/net/dev or ifconfig	
+Shows total bytes sent/received for all interfaces.
+
+psutil.net_if_addrs()	
+ip addr show or ifconfig -a	
+Lists IP, MAC, and other interface addresses.
+
+psutil.net_connections()	
+ss -tulpn or netstat -tulpn	
+Displays all active network connections and ports.
+
+⚙️ 5. System Information
+psutil Function	Equivalent Bash Command	Description
+psutil.boot_time()	
+who -b or uptime -s	
+Returns the system boot time (timestamp of last reboot).
+
+psutil.users()	
+who or w	
+Lists users currently logged into the system.
+
+psutil.sensors_temperatures()	
+sensors	Displays temperature readings (requires lm-sensors).
+
+🧩 6. Process Information
+psutil Function	Equivalent Bash Command	Description
+psutil.process_iter()	
+ps -eo pid,comm,user	
+Lists all active processes with PID, name, and user.
+
+psutil.Process(pid)	
+ps -p <pid> -o pid,comm,pcpu,pmem,state	
+Shows details for a specific process ID.
+
+Process.cpu_percent()	
+top -p <pid>	
+Displays CPU usage for a specific process.
+
+Process.memory_info()	
+pmap <pid> or ps -p <pid> -o rss,vsz	
+Shows memory usage of a process.
+
+Process.open_files()	
+lsof -p <pid>	
+Lists files opened by a process.
+
+Process.connections()	
+`netstat -anp	grep <pid>`
+
+🧠 7. Combined Monitoring Commands
+
+Purpose	Typical Bash Command	Equivalent psutil Functions
+Real-time system monitor	
+top or htop	cpu_percent(), virtual_memory(), disk_usage(), process_iter()
+General system info	lscpu, uname -a, df, free -h	cpu_count(), disk_partitions(), virtual_memory()
+
+Network traffic	ifconfig, 
+ip -s link	
+net_io_counters(pernic=True)
+
+System uptime	uptime	boot_time() + time difference calculation

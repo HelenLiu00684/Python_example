@@ -1,0 +1,6 @@
+This exercise is to implement a process where a Tcl script reads commands one by one, 
+sends them to a file in the WSL environment, then returns the results to Python3 for file reading and processing, 
+so that the information is both recorded in a file and displayed in the terminal.
+                                                                ------ 28/10/2025
+keypoints:
+                                                                
