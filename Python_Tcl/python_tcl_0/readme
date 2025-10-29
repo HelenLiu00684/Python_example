@@ -1,6 +1,9 @@
 This exercise is to implement a process where a Tcl script reads commands one by one, 
 sends them to a file in the WSL environment, then returns the results to Python3 for file reading and processing, 
 so that the information is both recorded in a file and displayed in the terminal.
-                                                                ------ 28/10/2025
+                                                               
 keypoints:
-                                                                
+1.Python3 invoke a Tcl file 
+2.Python3 save return results to a file and display into terminal
+3.Tcl read multiline and sent commands to WSL 
+4.Use class to verify the python3_print function to invoke the same Obj:                                                             

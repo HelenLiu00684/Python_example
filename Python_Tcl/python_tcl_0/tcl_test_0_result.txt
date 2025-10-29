@@ -1,39 +1,33 @@
 The result is prepared below:
 
-current time: 2025-10-28 21:11:10
+current time: 2025-10-29 07:30:07
 
-The command is:
+Invoke the Tcl scripts:
 
 TCL Output in Python OBJ return from TCL:
 
-[DEBUG obj] CompletedProcess(args=['tclsh', '/home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_test_0.tcl'], returncode=0, stdout="Running TCL script...\nSystem info 'uname -': Linux QJLIUHELEN 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux\nCPU stats 'cat /proc/stat':\ncpu  77076 1074 121114 167335494 12949 0 11072 0 0 0\ncpu0 3703 0 5233 10460246 1629 0 9341 0 0 0\ncpu1 3813 85 2509 10464560 1336 0 798 0 0 0\ncpu2 6109 0 6068 10457048 1380 0 304 0 0 0\ncpu3 4368 3 2868 10462124 2280 0 95 0 0 0\ncpu4 6457 597 12064 10451607 577 0 64 0 0 0\ncpu5 4677 12 36224 10430169 761 0 46 0 0 0\ncpu6 5577 4 12914 10452193 916 0 60 0 0 0\ncpu7 3734 260 11063 10457073 190 0 36 0 0 0\ncpu8 5646 110 5459 10459715 801 0 69 0 0 0\ncpu9 3604 0 3434 10465260 177 0 24 0 0 0\ncpu10 6312 0 5887 10458444 916 0 59 0 0 0\ncpu11 3168 0 2187 10466851 134 0 23 0 0 0\ncpu12 5816 0 5202 10459167 618 0 46 0 0 0\ncpu13 3973 0 3015 10465398 163 0 40 0 0 0\ncpu14 5906 0 5085 10459380 920 0 39 0 0 0\ncpu15 4206 0 1896 10466252 144 0 22 0 0 0\nintr 20560718 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 24619 1 1 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\nctxt 26043606\nbtime 1761595536\nprocesses 80996\nprocs_running 1\nprocs_blocked 0\nsoftirq 10848645 0 1950488 1 267708 0 0 697180 4548989 158 3384121\n", stderr='')
-Running TCL script...
-System info 'uname -': Linux QJLIUHELEN 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
-CPU stats 'cat /proc/stat':
-cpu  77076 1074 121114 167335494 12949 0 11072 0 0 0
-cpu0 3703 0 5233 10460246 1629 0 9341 0 0 0
-cpu1 3813 85 2509 10464560 1336 0 798 0 0 0
-cpu2 6109 0 6068 10457048 1380 0 304 0 0 0
-cpu3 4368 3 2868 10462124 2280 0 95 0 0 0
-cpu4 6457 597 12064 10451607 577 0 64 0 0 0
-cpu5 4677 12 36224 10430169 761 0 46 0 0 0
-cpu6 5577 4 12914 10452193 916 0 60 0 0 0
-cpu7 3734 260 11063 10457073 190 0 36 0 0 0
-cpu8 5646 110 5459 10459715 801 0 69 0 0 0
-cpu9 3604 0 3434 10465260 177 0 24 0 0 0
-cpu10 6312 0 5887 10458444 916 0 59 0 0 0
-cpu11 3168 0 2187 10466851 134 0 23 0 0 0
-cpu12 5816 0 5202 10459167 618 0 46 0 0 0
-cpu13 3973 0 3015 10465398 163 0 40 0 0 0
-cpu14 5906 0 5085 10459380 920 0 39 0 0 0
-cpu15 4206 0 1896 10466252 144 0 22 0 0 0
-intr 20560718 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 24619 1 1 10 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-ctxt 26043606
-btime 1761595536
-processes 80996
-procs_running 1
-procs_blocked 0
-softirq 10848645 0 1950488 1 267708 0 0 697180 4548989 158 3384121
+[DEBUG obj] CompletedProcess(args=['tclsh', '/home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_test_0.tcl'], returncode=0, stdout='Script directory: /home/qjliu/Python_code/Python_Tcl/python_tcl_0\nTarget file path: /home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_commands.txt\nOpen TCL file...\nRunning TCL script list:\n\nCommand line: pwd\nCommand line: ls\nCommand line: echo Hello from Tcl!\n\nRunning system commands...\nLine: pwd \n\': /home/qjliu/Python_code/Python_Tcl/python_tcl_0\nLine: ls \n\': python_tcl_0.py\nreadme\ntcl_commands.txt\ntcl_test_0.tcl\ntcl_test_0_result.txt\n⚠️ Error executing \'echo Hello from Tcl!\': couldn\'t execute "echo Hello from Tcl!": no such file or directory\n\n✅ Tcl finished successfully.\n', stderr='')
+Script directory: /home/qjliu/Python_code/Python_Tcl/python_tcl_0
+Target file path: /home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_commands.txt
+Open TCL file...
+Running TCL script list:
+
+Command line: pwd
+Command line: ls
+Command line: echo Hello from Tcl!
+
+Running system commands...
+Line: pwd 
+': /home/qjliu/Python_code/Python_Tcl/python_tcl_0
+Line: ls 
+': python_tcl_0.py
+readme
+tcl_commands.txt
+tcl_test_0.tcl
+tcl_test_0_result.txt
+⚠️ Error executing 'echo Hello from Tcl!': couldn't execute "echo Hello from Tcl!": no such file or directory
+
+✅ Tcl finished successfully.
 
 The output of TCL is finished.
 
