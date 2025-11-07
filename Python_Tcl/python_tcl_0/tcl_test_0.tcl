@@ -14,8 +14,10 @@ if {![file exists $filePath]} {
 
 puts "Open TCL file..."
 set fp [open $filePath r]
-set content [split [string map {"\r" ""} [read $fp]] "\n"]
+set content [split [string map {"\r" ""} [read $fp]] "\n"] 
 close $fp
+
+#string map {key1 value1 key2 value2 ...} string
 
 #puts "Running TCL script list:\n"
 #foreach line $content {
@@ -29,10 +31,12 @@ foreach line $content {
             #set result [eval exec $line]
             #puts "Command: $line"
             #puts "Result:\n$result\n"
-            set result [exec $line]
+            #set result [exec $line]
+            set result [eval exec $line]
             puts "Line: $line \n': $result"
 
         } errMsg
+        # errmsg is a special variable set by catch
         if {[info exists errMsg] && $errMsg ne ""} {
             puts "⚠️ Error executing '$line': $errMsg\n"
         }

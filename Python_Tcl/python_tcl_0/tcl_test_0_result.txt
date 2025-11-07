@@ -1,20 +1,13 @@
 The result is prepared below:
 
-current time: 2025-10-29 07:30:07
+current time: 2025-11-05 13:56:55
 
 Invoke the Tcl scripts:
 
 TCL Output in Python OBJ return from TCL:
 
-[DEBUG obj] CompletedProcess(args=['tclsh', '/home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_test_0.tcl'], returncode=0, stdout='Script directory: /home/qjliu/Python_code/Python_Tcl/python_tcl_0\nTarget file path: /home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_commands.txt\nOpen TCL file...\nRunning TCL script list:\n\nCommand line: pwd\nCommand line: ls\nCommand line: echo Hello from Tcl!\n\nRunning system commands...\nLine: pwd \n\': /home/qjliu/Python_code/Python_Tcl/python_tcl_0\nLine: ls \n\': python_tcl_0.py\nreadme\ntcl_commands.txt\ntcl_test_0.tcl\ntcl_test_0_result.txt\n⚠️ Error executing \'echo Hello from Tcl!\': couldn\'t execute "echo Hello from Tcl!": no such file or directory\n\n✅ Tcl finished successfully.\n', stderr='')
-Script directory: /home/qjliu/Python_code/Python_Tcl/python_tcl_0
-Target file path: /home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_commands.txt
+[DEBUG obj] CompletedProcess(args=['tclsh', '/home/qjliu/Python_code/Python_Tcl/python_tcl_0/tcl_test_0.tcl'], returncode=0, stdout="Open TCL file...\n\nRunning system commands...\nLine: pwd \n': /home/qjliu/Python_code/Python_Tcl/python_tcl_0\nLine: ls \n': python_tcl_0.py\nreadme\ntcl_commands.txt\ntcl_test_0.tcl\ntcl_test_0_result.txt\nLine: echo Hello from Tcl! \n': Hello from Tcl!\n✅ Tcl finished successfully.\n", stderr='')
 Open TCL file...
-Running TCL script list:
-
-Command line: pwd
-Command line: ls
-Command line: echo Hello from Tcl!
 
 Running system commands...
 Line: pwd 
@@ -25,8 +18,8 @@ readme
 tcl_commands.txt
 tcl_test_0.tcl
 tcl_test_0_result.txt
-⚠️ Error executing 'echo Hello from Tcl!': couldn't execute "echo Hello from Tcl!": no such file or directory
-
+Line: echo Hello from Tcl! 
+': Hello from Tcl!
 ✅ Tcl finished successfully.
 
 The output of TCL is finished.
