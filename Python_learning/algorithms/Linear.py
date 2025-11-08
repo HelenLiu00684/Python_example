@@ -76,6 +76,7 @@ if __name__ == "__main__":
 '''    
 #1.5 Linear Table Insert
 #Insert a student's score anywhere in the one-dimensional arrayscores.
+'''
 def linear_insert_value(linear:List[int], value:int, index:int)->List[int]:
 
     insert_list = [0]*(len(linear)+1)
@@ -102,3 +103,69 @@ if __name__ == "__main__":
         print("Invalid input. Please enter integers only.")
     except IndexError as e:
         print(e)
+'''
+#1.6 Linear Table Delete
+#delete a student's score anywhere in the one-dimensional arrayscores.
+'''  
+def linear_delete_index(linear:List[int], index:int)->List[int]:
+    if index < len(linear):
+        delete_list = [(len(linear)-1)*[0]]
+        for i in range(len(linear)):
+            if i<index:
+                delete_list[i]=linear[i]
+            elif i>=index and i < len(linear)-1:
+                delete_list[i]=linear[i+1]
+    else:
+        print("The index is out of the range.\n")
+    return delete_list
+
+def linear_delete_value(linear:List[int], value:int)->List[int]:
+    if value in linear:
+        j = 0
+        delete_list = []
+        for i in range (len(linear)):
+            if linear[i]!=value:
+                delete_list.append(linear[i])
+            else:
+                continue
+    else:
+        print("The value is out of the range\n")
+    return delete_list
+
+if __name__ == "__main__":
+    linear = [90,70,50,80,60,85]
+    print("Please input the opinion to delete the value from the linear listb <0.index 1.value>:")
+    try:
+        x=int(input("Enter the opinion:"))
+        print(x)
+        if x!=0 and x!=1:
+            raise ValueError(f"Only can accept 0 or 1")
+        elif x==0:
+            index = int(input("Enter the index to delete:"))
+            print(f"After delete the index {index} the remain list is :{linear_delete_index(linear,index)}")
+        elif x==1:
+            value = int(input("Enter the value to delete:"))
+            print(f"After delete the index {value} the remain list is :{linear_delete_value(linear,value)}")
+    except ValueError as e:
+        print(e)
+''' 
+#1.7 reverse order array
+#delete a student's score anywhere in the one-dimensional arrayscores.
+def linear_revert(linear:List[int])->List[int]:
+    linear_revert = []
+    if len(linear)%2==1:
+        length = (int)(len(linear)/2)+1
+    else:
+        length = (int)(len(linear)/2)
+    print(length)
+    for i in range(length):
+        temp = linear[i]
+        linear[i]=linear[len(linear)-i-1]
+        linear[len(linear)-1-i]=temp
+    return linear
+if __name__ == "__main__":
+    linear = [90,85,80,75,70,65]
+    print(f"The before linear list is {linear}\n")
+    print(f"The after linear list is {linear_revert(linear)}\n")
+    
+
