@@ -1,0 +1,29 @@
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=114 time=7.30 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=114 time=6.61 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=114 time=8.09 ms
+64 bytes from 8.8.8.8: icmp_seq=4 ttl=114 time=7.39 ms
+64 bytes from 8.8.8.8: icmp_seq=5 ttl=114 time=6.98 ms
+64 bytes from 8.8.8.8: icmp_seq=6 ttl=114 time=6.44 ms
+64 bytes from 8.8.8.8: icmp_seq=7 ttl=114 time=6.31 ms
+64 bytes from 8.8.8.8: icmp_seq=8 ttl=114 time=6.81 ms
+64 bytes from 8.8.8.8: icmp_seq=9 ttl=114 time=1990 ms
+
+--- 8.8.8.8 ping statistics ---
+10 packets transmitted, 9 received, 10% packet loss, time 9175ms
+rtt min/avg/max/mdev = 6.310/227.331/1990.062/623.219 ms, pipe 2
+PING 127.0.0.1 (127.0.0.1) 56(84) bytes of data.
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.017 ms
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.031 ms
+64 bytes from 127.0.0.1: icmp_seq=3 ttl=64 time=0.025 ms
+64 bytes from 127.0.0.1: icmp_seq=4 ttl=64 time=0.027 ms
+64 bytes from 127.0.0.1: icmp_seq=5 ttl=64 time=0.031 ms
+64 bytes from 127.0.0.1: icmp_seq=6 ttl=64 time=0.048 ms
+64 bytes from 127.0.0.1: icmp_seq=7 ttl=64 time=0.029 ms
+64 bytes from 127.0.0.1: icmp_seq=8 ttl=64 time=0.031 ms
+64 bytes from 127.0.0.1: icmp_seq=9 ttl=64 time=0.028 ms
+64 bytes from 127.0.0.1: icmp_seq=10 ttl=64 time=0.029 ms
+
+--- 127.0.0.1 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9174ms
+rtt min/avg/max/mdev = 0.017/0.029/0.048/0.007 ms
