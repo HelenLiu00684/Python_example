@@ -6,4 +6,5 @@ keypoints:
 1.Python3 invoke a Tcl file 
 2.Python3 save return results to a file and display into terminal
 3.Tcl read multiline and sent commands to WSL 
-4.Use class to verify the python3_print function to invoke the same Obj:                                                             
+4.Use class to verify the python3_print function to invoke the same Obj: 
+                                                            
