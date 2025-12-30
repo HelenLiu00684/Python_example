@@ -1,3 +1,0 @@
-pwd
-ls
-echo Hello from Tcl!
