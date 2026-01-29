@@ -1,1 +1,8 @@
 Interview_prepare/
+Python_AI/
+Python_DB/
+
+venv/
+__pycache__/
+.pytest_cache/
+logs/
