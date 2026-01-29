@@ -1,0 +1,41 @@
+spine1# show bgp summary
+
+BGP summary information for VRF default
+BGP router identifier 10.10.0.1, local AS number 65000
+BGP table version is 62, main routing table version 62
+4 network entries and 6 paths using 1120 bytes of memory
+BGP attribute entries [4/640], BGP AS path entries [0/0]
+BGP community entries [0/0], BGP clusterlist entries [0/0]
+
+Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  State/PfxRcd
+10.10.0.3     4 65101    1240    1208       62    0    0  1d02h           8
+10.10.0.4     4 65102       0       0        0    0    0  00:00:21        Idle
+10.10.0.5     4 65103    1188    1166       62    0    0  1d01h           8
+10.10.0.6     4 65104       0       0        0    0    0  00:00:12        Idle
+
+
+spine1# show ip ospf neighbors
+
+ OSPF Process ID 1 VRF default
+ Total number of neighbors: 4
+ Neighbor ID     Pri   State            Up Time  Address         Interface
+ 10.10.0.3       1   FULL/ -          1d02h   172.16.1.2       Eth1/1
+ 10.10.0.4       1   EXSTART/ -       00:09:12 172.16.1.6      Eth1/2
+ 10.10.0.5       1   FULL/ -          1d01h   172.16.1.10      Eth1/3
+ 10.10.0.6       1   DOWN/ -          00:00:00 172.16.1.14     Eth1/4
+
+
+spine1# show bgp l2vpn evpn summary
+
+BGP summary information for VRF default, address family L2VPN EVPN
+BGP router identifier 10.10.0.1, local AS number 65000
+BGP table version is 62, L2VPN EVPN config peers 4, capable peers 2
+12 network entries and 18 paths using 2808 bytes of memory
+BGP attribute entries [12/1920], BGP AS path entries [0/0]
+BGP community entries [0/0], BGP clusterlist entries [0/0]
+
+Neighbor        V    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  State/PfxRcd
+10.10.0.3     4 65101     988     972       62    0    0  1d02h          12
+10.10.0.4     4 65102       0       0        0    0    0  00:00:21       Idle
+10.10.0.5     4 65103     955     948       62    0    0  1d01h          12
+10.10.0.6     4 65104       0       0        0    0    0  00:00:12       Idle

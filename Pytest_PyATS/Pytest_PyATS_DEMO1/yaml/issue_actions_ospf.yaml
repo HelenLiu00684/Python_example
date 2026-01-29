@@ -1,0 +1,39 @@
+OSPF_MTU_MISMATCH:
+  match:
+    neighbor_state: EXSTART
+  action:
+    - clear ip ospf neighbor {peer}
+    - shut ospf interface {interface}
+    - no shut interface {interface}
+
+OSPF_NEIGHBOR_DOWN:
+  match:
+    neighbor_state: Down
+  action:
+    - clear ip ospf neighbor {peer}
+
+OSPF_INCOMPATIBLE_AREA:
+  match:
+    log_error: "Incompatible area" 
+  actions:
+    - show run interface {interface}
+    - show ip ospf interface {interface}
+
+OSPF_AUTH_FAILURE: 
+  match:
+    log_error: "Authentication failure" 
+  actions:
+    - show run interface {interface}
+    - show ip ospf interface {interface}      
+
+OSPF_NEIGHBOR_STATE_DOWN:
+  match:
+    neighbor_state: DOWN
+  actions:
+    - clear ip ospf neighbor {peer}   
+
+OSPF_NEIGHBOR_NOT_FULL:
+  match:
+    neighbor_state: DOWN
+  actions:
+    - clear ip ospf neighbor {neighbor}    

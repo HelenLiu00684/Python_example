@@ -1,0 +1,19 @@
+device: spine2
+role: spine
+issue:
+  protocol: BGP
+  summary:
+  - BGP_NEIGHBOR_DOWN
+  detail:
+    10.255.0.13: BGP_NEIGHBOR_DOWN
+    10.255.0.14: BGP_NEIGHBOR_DOWN
+  affected_peers:
+  - 10.255.0.13
+  - 10.255.0.14
+actions:
+- clear bgp ipv4 unicast neighbor 10.255.0.13
+- clear bgp ipv4 unicast neighbor 10.255.0.14
+metadata:
+  generated_by: test_network_health
+  generated_at: ''
+  version: v1

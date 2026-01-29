@@ -1,0 +1,36 @@
+INTERFACE_CRC_ERROR:
+  match:
+    crc_error: true
+  actions:
+    - shut interface {interface}
+    - no shut interface {interface}
+
+INTERFACE_INPUT_ERROR:
+  match:
+    input_error: true
+  actions:
+    - shut interface {interface}
+    - no shut interface {interface}
+
+INTERFACE_OUTPUT_ERROR:
+  match:
+    output_error: true
+  actions:
+    - shut interface {interface}
+    - no shut interface {interface}
+
+INTERFACE_ERR_DISABLED:
+  match:
+    status: err-disabled
+  actions:
+    - show interface {interface} status
+    - show run interface {interface}
+    - shut interface {interface}
+    - no shut interface {interface}
+
+INTERFACE_LINK_FLAP:
+  match:
+    log_error: "link.*up|link.*down"
+  actions:
+    - show interface {interface}
+    - no shut interface {interface}

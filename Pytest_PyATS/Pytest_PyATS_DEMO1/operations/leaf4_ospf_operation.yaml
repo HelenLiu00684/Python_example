@@ -1,0 +1,16 @@
+device: leaf4
+role: leaf
+issue:
+  protocol: OSPF
+  summary:
+  - OSPF_NEIGHBOR_NOT_FULL
+  detail:
+    10.0.0.101: OSPF_NEIGHBOR_NOT_FULL
+  affected_peers:
+  - 10.0.0.101
+actions:
+- clear ip ospf neighbor 10.0.0.101
+metadata:
+  generated_by: test_network_health
+  generated_at: ''
+  version: v1

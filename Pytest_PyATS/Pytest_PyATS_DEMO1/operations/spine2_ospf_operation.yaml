@@ -1,0 +1,16 @@
+device: spine2
+role: spine
+issue:
+  protocol: OSPF
+  summary:
+  - OSPF_NEIGHBOR_NOT_FULL
+  detail:
+    10.255.0.14: OSPF_NEIGHBOR_NOT_FULL
+  affected_peers:
+  - 10.255.0.14
+actions:
+- clear ip ospf neighbor 10.255.0.14
+metadata:
+  generated_by: test_network_health
+  generated_at: ''
+  version: v1

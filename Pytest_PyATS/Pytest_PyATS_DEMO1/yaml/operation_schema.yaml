@@ -1,0 +1,15 @@
+device: ""
+role: ""
+
+issue:
+  protocol: ""
+  summary: []
+  detail: null
+  affected_peers: []
+
+actions: []
+
+metadata:
+  generated_by: ""
+  generated_at: ""
+  version: "v1"

@@ -1,0 +1,33 @@
+EVPN_NEIGHBOR_DOWN:
+  match:
+    neighbor_state: Idle
+  actions:
+    - clear bgp l2vpn evpn neighbor {peer}
+
+EVPN_ACTIVE_OPEN_FAILED:
+  match:
+    log_error: "Active open failed"
+  actions:
+    - clear bgp l2vpn evpn neighbor {peer}
+    - clear bgp tcp session {peer}
+
+TCP_RESOURCE_EXHAUSTED:
+  match:
+    log_error: "TCP_RESOURCE_EXHAUSTED"
+  actions:
+    - clear bgp l2vpn evpn neighbor {peer}
+    - clear bgp tcp session {peer}
+
+EVPN_HOLD_TIMER_EXPIRED:
+  match:
+    log_error: "Hold Timer Expired"
+  actions:
+    - clear bgp l2vpn evpn neighbor {peer}
+
+EVPN_CAPABILITY_MISMATCH:
+  match:
+    log_error: "Unsupported capability"
+  actions:
+    - show bgp l2vpn evpn neighbor {peer}
+    - show run bgp
+

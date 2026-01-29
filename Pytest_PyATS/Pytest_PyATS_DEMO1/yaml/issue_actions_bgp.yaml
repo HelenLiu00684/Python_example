@@ -1,0 +1,36 @@
+BGP_NEIGHBOR_DOWN:
+  match:
+    neighbor_state: Idle
+  actions:
+    - clear bgp ipv4 unicast neighbor {peer}
+
+BGP_NEIGHBOR_ACTIVE:
+  match:
+    neighbor_state: Active
+  actions:
+    - clear bgp ipv4 unicast neighbor {peer}
+
+BGP_HOLD_TIMER_EXPIRED:
+  match:
+    log_error: "Hold Timer Expired"
+  actions:
+    - clear bgp ipv4 unicast neighbor {peer}
+
+BGP_TCP_RESET:
+  match:
+    log_error: "TCP reset"
+  actions:
+    - clear bgp tcp session {peer}
+
+BGP_NOTIFICATION_RECEIVED:
+  match:
+    log_error: "Notification received"
+  actions:
+    - clear bgp ipv4 unicast neighbor {peer}
+
+BGP_CAPABILITY_MISMATCH:
+  match:
+    log_error: "Unsupported capability"
+  actions:
+    - show run bgp
+    - show bgp ipv4 unicast neighbor {peer}
