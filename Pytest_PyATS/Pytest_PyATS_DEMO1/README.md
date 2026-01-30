@@ -52,7 +52,7 @@ Each issue is designed to illustrate a specific control-plane failure pattern in
 | leaf4 | spine1         | **Down**    | **Idle / Down**     | **Down**    | Single uplink failure toward spine1 affecting all control planes       |
 
 
-1.Project Directory Structure and Function
+3.Project Directory Structure and Function
 network_qa_demo1/------>main folder
 │
 ├── job.py------>pyATS job entry point
@@ -107,4 +107,7 @@ network_qa_demo1/------>main folder
 │
 └── README.md
     └─ Project documentation
+
+4.run order commands:
+step1:pyats run job job.py    
 

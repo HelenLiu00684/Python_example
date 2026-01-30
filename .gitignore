@@ -1,8 +1,8 @@
 Interview_prepare/
 Python_AI/
 Python_DB/
-
+operations/
 venv/
 __pycache__/
 .pytest_cache/
-logs/
+

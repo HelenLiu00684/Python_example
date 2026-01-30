@@ -1,31 +1,31 @@
-from pyats import aetest
+# =====================================================
+# basic packet input
+# =====================================================
+
 from pathlib import Path
+from pyats import aetest
 import sys
 
-# =====================================================
-# 基本路径
-# =====================================================
-from pyats import aetest
-from pathlib import Path
-import sys
 
+
+
+
+# Define the basic locations for the basic files
 BASE_DIR = Path(__file__).resolve().parents[1]
 SRC_DIR = BASE_DIR / "src"
-
-sys.path.insert(0, str(SRC_DIR))
+sys.path.insert(0, str(SRC_DIR)) #reset the import root folder
 
 YAML_DIR = BASE_DIR / "yaml"
 DATA_DIR = BASE_DIR / "data"
 OPERATIONS_DIR = BASE_DIR / "operations"
 
-
 # =====================================================
-# imports（统一 utils，不再用 src.utils）
+# imports（use documents under utils to import packets）
 # =====================================================
 from utils.testbed_loader import load_devices_from_testbed
 
 from utils.check_ospf_bgp_evpn import (
-    check_spine_leaf_evpn,
+    #check_spine_leaf_evpn,
     check_single_node_bgp_underlay,
     check_single_node_ospf_underlay,
 )
@@ -35,6 +35,12 @@ from utils.load_input_expected import (
     load_issue_actions_by_protocol,
     generate_operation_yaml,
 )
+
+# =====================================================
+# imports different files for checking files
+# =====================================================
+from checkers.evpn import check_evpn_neighbors
+
 
 # =====================================================
 # Testcase
@@ -60,10 +66,14 @@ class NetworkHealthTest(aetest.Testcase):
 
         # self.logger.info(f"Loaded devices: {list(self.devices.keys())}")
         print(f"Loaded devices:: {list(self.devices.keys())}")
-        
+        # self.devices == {
+        #     "leaf1":  {"role": "leaf"},
+        #     "leaf2":  {"role": "leaf"},
+        #     "spine1": {"role": "spine"},
+        #     }
 
     # =====================================================
-    # EVPN（只检查 leaf）
+    # EVPN（checking leaf/spine）
     # =====================================================
     @aetest.test
     def evpn_check(self):
@@ -73,25 +83,23 @@ class NetworkHealthTest(aetest.Testcase):
                 DATA_DIR / "routing_summary" / f"routing_summary_{dev}.log"
             )
 
-            evpn_result = check_spine_leaf_evpn(
+            evpn_result = check_evpn_neighbors(
                 device_name=dev,
                 routing_summary_file=routing_file,
-                #expected_nodes=self.expected_nodes,
-                #rules_by_protocol=self.rules_by_protocol,
             )
 
             if not evpn_result.get("has_issue"):
-                #self.logger.info(f"[{dev}] BGP underlay healthy")
                 print(f"[{dev}] EVPN underlay healthy: {list(self.devices.keys())}")
                 continue
+            #[leaf1] EVPN underlay healthy: ['leaf1', 'leaf2', 'spine1']
 
             generate_operation_yaml(
                 device_name=dev,
                 role=dev_info.get("role"),
                 protocol="EVPN",
-                issue_summary=list(evpn_result["issue_detail"].values()),
-                issue_detail=None,
-                affected_peers=list(evpn_result["issue_detail"].keys()),
+                issue_summary=evpn_result["issue_summary"],
+                issue_detail=evpn_result["issue_detail"],
+                affected_peers=evpn_result["affected_peers"],
                 actions=evpn_result["actions"],
                 schema_path=YAML_DIR / "operation_schema.yaml",
                 output_dir=OPERATIONS_DIR,
@@ -122,18 +130,6 @@ class NetworkHealthTest(aetest.Testcase):
                 print(f"[{dev}] BGP underlay healthy: {list(self.devices.keys())}")
                 continue
 
-            # generate_operation_yaml(
-            #     device_name=dev,
-            #     role=dev_info.get("role"),
-            #     protocol="BGP",
-            #     issue_summary=list(bgp_result["bgp_issues"].values()),
-            #     issue_detail=None,
-            #     affected_peers=list(bgp_result["bgp_issues"].keys()),
-            #     actions=bgp_result["actions"],
-            #     schema_path=YAML_DIR / "operation_schema.yaml",
-            #     output_dir=OPERATIONS_DIR,
-            #     generated_by="pyats_bgp_underlay_check",
-            # )
         generate_operation_yaml(
             device_name=dev,
             role=dev_info.get("role"),
@@ -171,21 +167,7 @@ class NetworkHealthTest(aetest.Testcase):
                 print(f"[{dev}] OSPF underlay healthy: {list(self.devices.keys())}")
                 continue
 
-            # generate_operation_yaml(
-            #     device_name=dev,
-            #     role=dev_info.get("role"),
-            #     protocol="OSPF",
-            #     issue_summary=list(ospf_result["ospf_issues"].values()),
-            #     issue_detail=None,
-            #     affected_peers=[
-            #         k for k in ospf_result["ospf_issues"].keys()
-            #         if k != "_log_"
-            #     ],
-            #     actions=ospf_result.get("actions", []),
-            #     schema_path=YAML_DIR / "operation_schema.yaml",
-            #     output_dir=OPERATIONS_DIR,
-            #     generated_by="pyats_ospf_underlay_check",
-            # )
+
             generate_operation_yaml(
                 device_name=dev,
                 role=dev_info.get("role"),
