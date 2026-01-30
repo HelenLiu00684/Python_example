@@ -1,5 +1,53 @@
-This project is a network health check demo built on pyATS.
-It analyzes post migration routing protocol states (OSPF, BGP, EVPN), evaluates protocol health, generates operation recommendation automatially and output YAMLs instead of execute changes manually.
+## Overview
+
+This project is a rule-driven network automation demo designed to analyze post-migration
+routing protocol states, including OSPF, BGP, and EVPN.
+
+Instead of directly applying configuration changes, the system evaluates protocol health
+and generates structured operation recommendations in YAML format. These outputs are
+intended for review, validation, or integration with downstream automation workflows.
+
+The project emphasizes modular design, clear data boundaries, and extensibility,
+providing a foundation for future multi-vendor and AI-assisted automation.
+
+## Workflow Overview
+
+The system follows a layered and deterministic workflow to evaluate routing protocol health
+and generate operation recommendations:
+
+```text
+Routing Protocol Outputs (Post-Migration)
+        ↓
+Raw Parsing (CLI / log based)
+        ↓
+Semantic Parsing (Protocol-Level Facts)
+        ↓
+Rule-Based Health Evaluation
+        ↓
+Operation Recommendation (YAML)
+
+## ③ Design Rationale: Semantic Parsing Layer
+
+## Design Rationale: Semantic Parsing Layer
+
+This project intentionally introduces a semantic parsing layer rather than relying solely
+on YAML-driven rules or direct raw CLI parsing.
+
+The primary goal of this design is to establish a protocol-centric and vendor-agnostic
+data model that decouples protocol semantics from device-specific formats and automation logic.
+
+By normalizing raw routing protocol outputs into semantic facts, the system ensures that:
+
+1. Protocol health evaluation logic remains independent of CLI formats  
+2. YAML rules operate on structured facts instead of raw text  
+3. Multi-vendor support can be introduced by adding new raw parsers without modifying
+   existing checkers or orchestration logic  
+
+While YAML is used to describe expected states and remediation actions, it is intentionally
+positioned above the semantic layer rather than acting as the primary parsing mechanism.
+This allows the system to evolve beyond static rule matching and toward more flexible
+automation and AI-assisted workflows.
+
 
 1.Topology:
                                Spine1 (RID 10.10.0.1)            Spine2 (RID 10.10.0.2)
@@ -53,61 +101,30 @@ Each issue is designed to illustrate a specific control-plane failure pattern in
 
 
 3.Project Directory Structure and Function
-network_qa_demo1/------>main folder
-│
-├── job.py------>pyATS job entry point
-│   
-│
-├── tests/test_network_health.py
-│
-│       └─ Protocol-agnostic orchestration layer
-│
-├── src/
-│   └── utils/
-│       ├── check_ospf_bgp_evpn.py
-│       │   └─ Protocol health evaluation logic
-│       │
-│       ├── routing_summary_parser.py
-│       │   └─ CLI text parsing utilities
-│       │
-│       ├── load_input_expected.py
-│       │   └─ Rule loading and operation YAML generation
-│       │
-│       └── testbed_loader.py
-│           └─ Device inventory loader
-│
-├── yaml/
-│   ├── expected_nodes.yaml
-│   │   └─ Expected topology or node references
-│   │
-│   ├── issue_actions_ospf.yaml
-│   ├── issue_actions_bgp.yaml
-│   ├── issue_actions_evpn.yaml
-│   ├── issue_actions_interface.yaml
-│   │   └─ Issue-to-action mapping rules
-│   │
-│   └── operation_schema.yaml
-│       └─ Output schema definition
-│
-├── data/
-│   ├── routing_summary/
-│   │   └─ Pre-collected routing summaries
-│   │
-│   └── logs/
-│       └─ Execution and debug logs
-│
-├── operations/
-│   └─ Generated operation recommendation YAML files
-│
-├── testbed.yaml
-│   └─ Device inventory and role definitions
-│
-├── requirements.txt
-│   └─ Python dependencies
-│
-└── README.md
-    └─ Project documentation
+//Future
 
 4.run order commands:
 step1:pyats run job job.py    
+
+5. git recording:
+1/29/2026:
+1.content:
+Added a semantic parser for EVPN neighbor data
+Separated EVPN parsing from checking logic
+Updated EVPN data schema documentation
+Cleaned up runtime-generated artifacts
+
+WorkFlow:
+Routing Summary Log (CLI output)
+        ↓
+Raw Parser (CLI / regex based)
+        ↓
+EVPN Semantic Parser
+        ↓
+Protocol-Level Facts (vendor-agnostic)
+        ↓
+EVPN Checker (rule-based evaluation)
+        ↓
+Operation YAML (remediation plan)
+
 
