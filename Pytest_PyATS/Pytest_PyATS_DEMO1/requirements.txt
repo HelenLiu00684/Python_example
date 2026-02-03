@@ -1,4 +1,0 @@
-pyyaml
-pytest
-pyats[full]
-
