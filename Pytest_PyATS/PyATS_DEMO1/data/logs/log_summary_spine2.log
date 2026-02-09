@@ -1,0 +1,81 @@
+2026 Jan 02 12:22:14 spine2 %SEC-6-LOGIN_SUCCESS: Login Success [user: admin] [Source: 10.10.10.50] [local-port: 22]
+
+spine2# show logging last 50
+2026 Jan 02 12:18:41 spine2 %BGP-5-ADJCHANGE: neighbor 10.10.0.5 l2vpn evpn Down - Hold Timer expired
+2026 Jan 02 12:18:44 spine2 %TCP-2-MPREPEND: bgp tcp m_prepend failed, error No system resources
+2026 Jan 02 12:18:48 spine2 %BGP-5-ADJCHANGE: neighbor 10.10.0.5 l2vpn evpn Up
+
+
+spine2# show ip ospf interface
+Ethernet1/1 is up, line protocol is up
+  Internet Address 192.168.12.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 1
+Ethernet1/2 is up, line protocol is up
+  Internet Address 192.168.22.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 1
+Ethernet1/3 is up, line protocol is up
+  Internet Address 192.168.32.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 1
+Ethernet1/4 is up, line protocol is up
+  Internet Address 192.168.42.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 1
+
+spine2# show interface Ethernet1/1
+Ethernet1/1 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine2# show interface Ethernet1/2
+Ethernet1/2 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine2# show interface Ethernet1/3
+Ethernet1/3 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine2# show interface Ethernet1/4
+Ethernet1/4 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine2# show bgp neighbors 10.10.0.3
+BGP neighbor is 10.10.0.3, remote AS 65000
+  BGP state = Established
+  Last reset due to: none
+
+spine2# show bgp neighbors 10.10.0.4
+BGP neighbor is 10.10.0.4, remote AS 65000
+  BGP state = Established
+  Last reset due to: none
+
+spine2# show bgp neighbors 10.10.0.5
+BGP neighbor is 10.10.0.5, remote AS 65000
+  BGP state = Established
+  Last reset due to: Hold Timer expired
+
+spine2# show bgp neighbors 10.10.0.6
+BGP neighbor is 10.10.0.6, remote AS 65000
+  BGP state = Established
+  Last reset due to: none
+
+spine2# show bgp l2vpn evpn neighbors 10.10.0.3
+BGP neighbor is 10.10.0.3
+  Address Family L2VPN EVPN:
+    BGP state = Established
+
+spine2# show bgp l2vpn evpn neighbors 10.10.0.4
+BGP neighbor is 10.10.0.4
+  Address Family L2VPN EVPN:
+    BGP state = Established
+
+spine2# show bgp l2vpn evpn neighbors 10.10.0.5
+BGP neighbor is 10.10.0.5
+  Address Family L2VPN EVPN:
+    BGP state = Established
+
+spine2# show bgp l2vpn evpn neighbors 10.10.0.6
+BGP neighbor is 10.10.0.6
+  Address Family L2VPN EVPN:
+    BGP state = Established
