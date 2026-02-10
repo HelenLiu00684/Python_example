@@ -5,5 +5,5 @@ operations/
 venv/
 __pycache__/
 .pytest_cache/
-Pytest_PyATS_DEMO1/
+
 
