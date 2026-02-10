@@ -16,6 +16,7 @@ keypoints:
 4.Using file open and write function 
 5.using re to filter string
 Note:Global Interpreter Lock (GIL) problem, Python can not execute multiple threads simultaneously,true parallel computation is not possible
+
 3. Semantic Parsing–Driven Network Health Validation PyATS + AI 
 This repository contains a network automation demo focused on post-migration protocol validation for OSPF, BGP, and EVPN, built with pyATS and Python.
 Instead of driving automation directly from raw CLI outputs or hard-coded rules, the project introduces a semantic parsing layer that normalizes protocol state into vendor-agnostic facts.
