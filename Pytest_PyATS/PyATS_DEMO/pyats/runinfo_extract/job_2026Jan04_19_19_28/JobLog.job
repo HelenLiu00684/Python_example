@@ -1,0 +1,17 @@
+3: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[part=3.1/3][pid=748067][pname=MainProcess]: +------------------------------------------------------------------------------+
+4: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[part=3.2/3][pid=748067][pname=MainProcess]: |                          Bringup/Clean Information                           |
+5: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[part=3.3/3][pid=748067][pname=MainProcess]: +------------------------------------------------------------------------------+
+6: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[pid=748067][pname=MainProcess]: {'bringup': {}, 'cleaners': {}, 'devices': {}}
+
+7: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[part=7.1/3][pid=748067][pname=MainProcess]: +------------------------------------------------------------------------------+
+8: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[part=7.2/3][pid=748067][pname=MainProcess]: |           Bringup/Clean Information after applying clean templates           |
+9: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[part=7.3/3][pid=748067][pname=MainProcess]: +------------------------------------------------------------------------------+
+10: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[pid=748067][pname=MainProcess]: {'bringup': {}, 'cleaners': {}, 'devices': {}}
+
+11: QJLIUHELEN: 2026-01-04T19:19:33: %ATS-6-INFO: %[pid=748067][pname=MainProcess]: Checking all devices are up and ready is disabled, '--check-all-devices-up' must be set to True in case of pyats runs or '-check_all_devices_up' set to True in case of legacy easypy runs
+0: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[pid=748292][pname=Task-1]: Starting task execution: Task-1
+1: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[pid=748292][pname=Task-1]:     test harness = pyats.aetest
+2: QJLIUHELEN: 2026-01-04T19:19:33: %EASYPY-6-INFO: %[pid=748292][pname=Task-1]:     testscript   = /home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests/test_network_health.py
+12: QJLIUHELEN: 2026-01-04T19:19:34: %GENIE-6-INFO: %[pid=748067][pname=MainProcess]: Saving Abstract Tree...
+13: QJLIUHELEN: 2026-01-04T19:19:34: %GENIE-6-INFO: %[pid=748067][pname=MainProcess]: Abstract Tree saved
+14: QJLIUHELEN: 2026-01-04T19:19:34: %CONTRIB-6-INFO: %[pid=748067][pname=MainProcess]: WebEx Token not given as argument or in config. No WebEx notification will be sent

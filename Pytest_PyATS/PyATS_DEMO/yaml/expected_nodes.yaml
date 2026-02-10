@@ -1,0 +1,34 @@
+leaf:
+  role: leaf
+  ospf: 
+    ospf_neighbors: 2
+    ospf_states: 
+      - FULL
+  bgp:
+    bgp_underlay_neighbors: 2
+    bgp_states: 
+      - Established
+  evpn:
+    evpn_neighbors: 2
+    evpn_states: 
+      - Established
+  interface:
+    interface_crc_error: false
+    interface_err_disable: false  
+
+spine:
+  role: spine
+  ospf: 
+    ospf_neighbors: 4
+    ospf_states: 
+      - FULL
+  bgp:
+    bgp_underlay_neighbors: 4
+    bgp_states: 
+      - Established
+  evpn:
+    evpn_neighbors: 4 # no involve EVPN
+    evpn_states: 
+      - Established
+    interface_crc_error: false
+    interface_err_disable: false     

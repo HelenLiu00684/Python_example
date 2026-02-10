@@ -1,0 +1,63 @@
+2026 Jan 02 11:18:30 leaf1 %SEC-6-LOGIN_SUCCESS: Login Success [user: admin] [Source: 10.10.10.50] [local-port: 22]
+
+leaf1# show logging last 50
+2026 Jan 02 11:05:12 leaf1 %ETHPORT-5-IF_UP: Interface Ethernet1/1 is up
+2026 Jan 02 11:05:14 leaf1 %ETHPORT-5-IF_UP: Interface Ethernet1/2 is up
+2026 Jan 02 11:05:21 leaf1 %OSPF-5-ADJCHG: OSPF-1 VRF default: Nbr 10.10.0.1 on Ethernet1/1 from LOADING to FULL
+2026 Jan 02 11:05:24 leaf1 %OSPF-5-ADJCHG: OSPF-1 VRF default: Nbr 10.10.0.2 on Ethernet1/2 from LOADING to FULL
+2026 Jan 02 11:05:38 leaf1 %BGP-5-ADJCHANGE: neighbor 10.10.0.1 l2vpn evpn Up
+2026 Jan 02 11:05:41 leaf1 %BGP-5-ADJCHANGE: neighbor 10.10.0.2 l2vpn evpn Up
+
+
+leaf1# show ip ospf interface
+Ethernet1/1 is up, line protocol is up
+  Internet Address 192.168.13.2/30, Area 0.0.0.0
+  Process ID 1, Router ID 10.10.0.3, Network Type BROADCAST, Cost 10
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.10.0.3, Interface address 192.168.13.2
+  Adjacent neighbor count is 1
+
+Ethernet1/2 is up, line protocol is up
+  Internet Address 192.168.14.2/30, Area 0.0.0.0
+  Process ID 1, Router ID 10.10.0.3, Network Type BROADCAST, Cost 10
+  Transmit Delay is 1 sec, State DR, Priority 1
+  Designated Router (ID) 10.10.0.3, Interface address 192.168.14.2
+  Adjacent neighbor count is 1
+
+leaf1# show interface Ethernet1/1
+Ethernet1/1 is up
+  Hardware: Ethernet, address: 5e00.0001.0001
+  MTU 9216 bytes, BW 10000000 Kbit
+  reliability 255/255, txload 1/255, rxload 1/255
+  0 input errors, 0 CRC, 0 frame, 0 overrun
+
+leaf1# show interface Ethernet1/2
+Ethernet1/2 is up
+  Hardware: Ethernet, address: 5e00.0001.0002
+  MTU 9216 bytes, BW 10000000 Kbit
+  reliability 255/255, txload 1/255, rxload 1/255
+  0 input errors, 0 CRC, 0 frame, 0 overrun
+
+leaf1# show bgp neighbors 10.10.0.1
+BGP neighbor is 10.10.0.1, remote AS 65000, internal link
+  BGP version 4, remote router ID 10.10.0.1
+  BGP state = Established, up for 2d03h
+  Last reset due to: none
+
+leaf1# show bgp neighbors 10.10.0.2
+BGP neighbor is 10.10.0.2, remote AS 65000, internal link
+  BGP version 4, remote router ID 10.10.0.2
+  BGP state = Established, up for 2d03h
+  Last reset due to: none
+
+leaf1# show bgp l2vpn evpn neighbors 10.10.0.1
+BGP neighbor is 10.10.0.1, remote AS 65000
+  Address Family L2VPN EVPN:
+    BGP state = Established
+    PfxRcd = 20
+
+leaf1# show bgp l2vpn evpn neighbors 10.10.0.2
+BGP neighbor is 10.10.0.2, remote AS 65000
+  Address Family L2VPN EVPN:
+    BGP state = Established
+    PfxRcd = 20

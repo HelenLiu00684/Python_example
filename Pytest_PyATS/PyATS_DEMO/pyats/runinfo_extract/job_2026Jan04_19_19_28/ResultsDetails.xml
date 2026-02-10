@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+<aereport xmlns="http://wwwin-ats.cisco.com/xml/schema/aereport" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:schemaLocation="http://wwwin-ats.cisco.com/xml/schema/aereport.xsd">
+  <testsuite>
+    <starttime>2026-01-04T19:19:33</starttime>
+    <initinfo>
+      <name>job</name>
+      <params>
+        <cli>/home/qjliu/Python_code/venv/bin/pyats run job job.py --output /home/qjliu/pyats</cli>
+        <mailto/>
+        <report>
+          <type/>
+          <sort>0</sort>
+          <outofrange>0</outofrange>
+          <uniquesuites>0</uniquesuites>
+          <count_common_result_summary>1</count_common_result_summary>
+          <sem/>
+        </report>
+        <rerun>0</rerun>
+        <cleantype>easyclean</cleantype>
+        <uniquetid>0</uniquetid>
+        <max>
+          <errors>10</errors>
+          <jobs>-1</jobs>
+        </max>
+        <reason/>
+        <tidRange/>
+      </params>
+      <jobid>job_2026Jan04_19_19_28_749508</jobid>
+      <ats>
+        <path>/home/qjliu/Python_code/venv</path>
+        <version>25.11</version>
+      </ats>
+      <CONFIG/>
+      <host>QJLIUHELEN</host>
+      <owner/>
+      <submitter>qjliu</submitter>
+      <user>qjliu</user>
+      <topology/>
+      <logfile begin="0" size="-1"/>
+      <tbautoselect/>
+      <release/>
+      <image/>
+      <testbed/>
+    </initinfo>
+    <jobexecution>
+      <starttime>2026-01-04T19:19:33</starttime>
+      <runinfo/>
+      <testscript>
+        <starttime>2026-01-04T19:19:33</starttime>
+        <initinfo>
+          <script>
+            <name>test_network_health.py</name>
+            <path>/home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests</path>
+          </script>
+          <pargs/>
+          <taskid>Task-1</taskid>
+          <description/>
+          <logfile begin="0" size="-1">TaskLog.Task-1</logfile>
+        </initinfo>
+        <runinfo/>
+        <testcase>
+          <starttime>2026-01-04T19:19:33</starttime>
+          <initinfo>
+            <id name="NetworkHealthTest" md5="">
+              <tc>NetworkHealthTest</tc>
+            </id>
+            <name>NetworkHealthTest</name>
+            <xref>
+              <file>/home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests/test_network_health.py</file>
+              <line>50</line>
+            </xref>
+            <description/>
+            <swversion>None</swversion>
+            <hwversion>None</hwversion>
+            <fwversion>None</fwversion>
+            <tstversion>None</tstversion>
+            <logfile begin="0" size="3287">TaskLog.Task-1</logfile>
+          </initinfo>
+          <runinfo/>
+          <setup>
+            <starttime>2026-01-04T19:19:33</starttime>
+            <name>setup</name>
+            <description/>
+            <xref>
+              <file>/home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests/test_network_health.py</file>
+              <line>52</line>
+            </xref>
+            <logfile begin="522" size="644">TaskLog.Task-1</logfile>
+            <runinfo/>
+            <result mode="auto">passed</result>
+            <stoptime>2026-01-04T19:19:33</stoptime>
+            <runtime>00:00:00</runtime>
+          </setup>
+          <section>
+            <starttime>2026-01-04T19:19:33</starttime>
+            <name>evpn_check</name>
+            <description/>
+            <xref>
+              <file>/home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests/test_network_health.py</file>
+              <line>57</line>
+            </xref>
+            <logfile begin="1166" size="656">TaskLog.Task-1</logfile>
+            <runinfo/>
+            <result mode="auto">passed</result>
+            <stoptime>2026-01-04T19:19:33</stoptime>
+            <runtime>00:00:00</runtime>
+          </section>
+          <section>
+            <starttime>2026-01-04T19:19:33</starttime>
+            <name>bgp_underlay_check</name>
+            <description/>
+            <xref>
+              <file>/home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests/test_network_health.py</file>
+              <line>66</line>
+            </xref>
+            <logfile begin="1822" size="664">TaskLog.Task-1</logfile>
+            <runinfo/>
+            <result mode="auto">passed</result>
+            <stoptime>2026-01-04T19:19:33</stoptime>
+            <runtime>00:00:00</runtime>
+          </section>
+          <section>
+            <starttime>2026-01-04T19:19:33</starttime>
+            <name>ospf_underlay_check</name>
+            <description/>
+            <xref>
+              <file>/home/qjliu/Python_code/Pytest_PyATS/network_qa_demo1/tests/test_network_health.py</file>
+              <line>76</line>
+            </xref>
+            <logfile begin="2486" size="665">TaskLog.Task-1</logfile>
+            <runinfo/>
+            <result mode="auto">passed</result>
+            <stoptime>2026-01-04T19:19:33</stoptime>
+            <runtime>00:00:00</runtime>
+          </section>
+          <result mode="auto">passed</result>
+          <stoptime>2026-01-04T19:19:33</stoptime>
+          <runtime>00:00:00</runtime>
+        </testcase>
+        <stoptime>2026-01-04T19:19:33</stoptime>
+        <runtime>00:00:00</runtime>
+        <summary>
+          <abort>0</abort>
+          <pass>1</pass>
+          <passx>0</passx>
+          <fail>0</fail>
+          <block>0</block>
+          <skip>0</skip>
+          <error>0</error>
+          <never_ran>0</never_ran>
+          <unknown>0</unknown>
+          <total>1</total>
+          <success_rate>100.0</success_rate>
+        </summary>
+      </testscript>
+      <result mode="auto"/>
+      <stoptime>2026-01-04T19:19:34</stoptime>
+      <runtime>00:00:01</runtime>
+    </jobexecution>
+    <tims bgPost="False">
+      <dnsname/>
+      <post>
+        <status/>
+        <cmd/>
+      </post>
+    </tims>
+    <runinfo/>
+    <archivefile>/home/qjliu/.pyats/archive/26-01/job_2026Jan04_19_19_28_749508.zip</archivefile>
+    <stoptime>2026-01-04T19:19:34</stoptime>
+    <runtime>00:00:01</runtime>
+    <summary>
+      <abort>0</abort>
+      <pass>1</pass>
+      <passx>0</passx>
+      <fail>0</fail>
+      <block>0</block>
+      <skip>0</skip>
+      <error>0</error>
+      <never_ran>0</never_ran>
+      <unknown>0</unknown>
+      <total>1</total>
+      <success_rate>100.0</success_rate>
+    </summary>
+  </testsuite>
+</aereport>

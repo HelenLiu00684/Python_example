@@ -1,0 +1,87 @@
+2026 Jan 02 12:20:01 spine1 %SEC-6-LOGIN_SUCCESS: Login Success [user: admin] [Source: 10.10.10.50] [local-port: 22]
+
+spine1# show logging last 50
+2026 Jan 02 12:12:44 spine1 %OSPF-4-MTU_MISMATCH: OSPF-1 VRF default: Nbr 10.10.0.4 on Ethernet1/2 MTU mismatch (local 9216, remote 1500)
+2026 Jan 02 12:12:46 spine1 %OSPF-5-ADJCHG: OSPF-1 VRF default: Nbr 10.10.0.4 on Ethernet1/2 from FULL to EXSTART
+2026 Jan 02 12:15:18 spine1 %ETHPORT-3-IF_ERROR: Interface Ethernet1/4, CRC error detected
+2026 Jan 02 12:15:21 spine1 %ETHPORT-3-IF_ERROR: Interface Ethernet1/4, CRC error detected
+2026 Jan 02 12:15:24 spine1 %PM-4-ERRDISABLE: crc-error error detected on Ethernet1/4
+2026 Jan 02 12:15:26 spine1 %ETHPORT-5-IF_ADMIN_DOWN: Interface Ethernet1/4 is down (err-disable)
+2026 Jan 02 12:15:29 spine1 %OSPF-5-ADJCHG: OSPF-1 VRF default: Nbr 10.10.0.6 on Ethernet1/4 from FULL to DOWN
+2026 Jan 02 12:15:33 spine1 %BGP-5-ADJCHANGE: neighbor 10.10.0.6 l2vpn evpn Down - Interface down
+
+
+spine1# show ip ospf interface
+Ethernet1/1 is up, line protocol is up
+  Internet Address 192.168.11.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 1
+Ethernet1/2 is up, line protocol is up
+  Internet Address 192.168.21.1/30, Area 0.0.0.0
+  MTU mismatch detected with neighbor
+  Adjacent neighbor count is 0
+Ethernet1/3 is up, line protocol is up
+  Internet Address 192.168.31.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 1
+Ethernet1/4 is down
+  Internet Address 192.168.41.1/30, Area 0.0.0.0
+  Adjacent neighbor count is 0
+
+spine1# show interface Ethernet1/1
+Ethernet1/1 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine1# show interface Ethernet1/2
+Ethernet1/2 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine1# show interface Ethernet1/3
+Ethernet1/3 is up
+  MTU 9216 bytes, BW 10000000 Kbit
+  0 input errors, 0 CRC
+
+spine1# show interface Ethernet1/4
+Ethernet1/4 is down (err-disabled)
+  MTU 9216 bytes, BW 10000000 Kbit
+  8421 input errors, 8398 CRC
+
+spine1# show bgp neighbors 10.10.0.3
+BGP neighbor is 10.10.0.3, remote AS 65000
+  BGP state = Established
+  Last reset due to: none
+
+spine1# show bgp neighbors 10.10.0.4
+BGP neighbor is 10.10.0.4, remote AS 65000
+  BGP state = Established
+  Last reset due to: none
+
+spine1# show bgp neighbors 10.10.0.5
+BGP neighbor is 10.10.0.5, remote AS 65000
+  BGP state = Established
+  Last reset due to: none
+
+spine1# show bgp neighbors 10.10.0.6
+BGP neighbor is 10.10.0.6, remote AS 65000
+  BGP state = Idle
+  Last reset due to: Interface down
+
+spine1# show bgp l2vpn evpn neighbors 10.10.0.3
+BGP neighbor is 10.10.0.3
+  Address Family L2VPN EVPN:
+    BGP state = Established
+
+spine1# show bgp l2vpn evpn neighbors 10.10.0.4
+BGP neighbor is 10.10.0.4
+  Address Family L2VPN EVPN:
+    BGP state = Established
+
+spine1# show bgp l2vpn evpn neighbors 10.10.0.5
+BGP neighbor is 10.10.0.5
+  Address Family L2VPN EVPN:
+    BGP state = Established
+
+spine1# show bgp l2vpn evpn neighbors 10.10.0.6
+BGP neighbor is 10.10.0.6
+  Address Family L2VPN EVPN:
+    BGP state = Idle

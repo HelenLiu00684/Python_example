@@ -1,0 +1,14 @@
+EVPN_NEIGHBOR_DOWN:
+  description: >
+    EVPN neighbor session is down based on parsed overlay
+    control-plane state. This may impact L2/L3 service
+    reachability.
+
+  actions:
+    - show bgp evpn summary
+    - show bgp evpn neighbors {peer}
+
+  notes:
+    - Issue is triggered when EVPN neighbor is not operational
+    - YAML does not match EVPN FSM or log output
+    - Root cause may reside in underlay routing or interfaces
