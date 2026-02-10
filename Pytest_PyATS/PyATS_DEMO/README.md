@@ -1,5 +1,18 @@
-## PyATS Network Health Demo
-This demo shows a network health validation workflow built with pyATS and Python.
-It takes raw device logs and routing summaries, normalizes them into structured, vendor-agnostic data, and runs rule-based checks on interfaces and routing protocols such as OSPF, BGP, and EVPN. The system produces operation suggestions only (YAML output), with no live configuration changes.
-The project is intentionally split into clear layers: semantic parsing, protocol checkers, and cross-protocol correlation. Parsers only normalize data, checkers only apply protocol-specific rules, and correlation logic only reasons about dependencies between protocol layers. This separation keeps the behavior deterministic, easy to extend, and easy to explain.
-Rather than focusing on automation or telemetry, this demo emphasizes engineering judgment and explainability. When multiple issues appear on the same device, the system correlates them using a simple protocol dependency model to infer a likely root cause. The goal is to show how network state analysis can be structured in a clean, maintainable, and operator-friendly way.
+## PyATS + AI Network Health Demo
+Semantic Parsing–Driven Network Health Validation (pyATS Demo)
+
+This repository contains a network automation demo focused on post-migration protocol validation for OSPF, BGP, and EVPN, built with pyATS and Python.
+
+Instead of driving automation directly from raw CLI outputs or hard-coded rules, the project introduces a semantic parsing layer that normalizes protocol state into vendor-agnostic facts.
+This design decouples protocol logic from device-specific formats and provides a clean foundation for rule-based validation and higher-level reasoning.
+
+The workflow follows a clear separation of responsibilities:
+
+Raw CLI / logs
+ → Semantic parsing (protocol facts)
+ → Rule-based protocol checks
+ → Operation YAML (suggested actions only)
+ → Cross-protocol correlation (root cause inference)
+
+
+The goal of this demo is to explore clean architecture and semantic modeling in network automation, not to build a full remediation or telemetry system.
